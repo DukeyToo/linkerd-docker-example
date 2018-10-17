@@ -1,12 +1,18 @@
-version: '2'
+version: '3'
 
 services:
   # an nginx service serving static content
-  hello:
+  green:
     image: nginx
-    # mount the www directory as the static content to serve
+    # mount the wwwg directory as the static content to serve
     volumes:
-    - ./www:/usr/share/nginx/html:ro
+    - ./wwwg:/usr/share/nginx/html:ro
+
+  red:
+    image: nginx
+    # mount the wwwr directory as the static content to serve
+    volumes:
+    - ./wwwr:/usr/share/nginx/html:ro
 
   # linkerd
   l5d:
@@ -20,4 +26,3 @@ services:
     - ./disco:/io.buoyant/disco
     command: >
       /io.buoyant/linkerd.yaml
-
