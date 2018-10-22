@@ -1,0 +1,24 @@
+admin:
+  ip: 0.0.0.0
+  port: 9990
+
+# namers:
+# - kind: io.l5d.fs
+#   rootDir: /io.buoyant/disco
+
+#routers:
+# - protocol: http
+#   dtab: |
+#     /svc => /#/io.l5d.fs
+#   servers:
+#   - ip: 0.0.0.0
+#     port: 4140
+
+routers:
+- protocol: http
+  interpreter:
+    kind: io.l5d.namerd
+    dst: /$/inet/n5d/4100
+  servers:
+  - port: 4140
+    ip: 0.0.0.0
