@@ -1,11 +1,12 @@
 version: '3'
 
 services:
+  #green page
   green:
     image: nginx
     volumes:
     - ./wwwg:/usr/share/nginx/html:ro
-
+  #red page
   red:
     image: nginx
     volumes:
@@ -32,3 +33,14 @@ services:
     - ./disco:/io.buoyant/disco
     command: >
       /io.buoyant/namerd.yml
+
+  #Zookeper
+  zook:
+    image: zookeeper
+    restart: always
+    hostname: zook
+    ports:
+      - 2181:2181
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_SERVERS: server.1=0.0.0.0:2888
