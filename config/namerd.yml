@@ -3,20 +3,17 @@ admin:
 
 storage:
   kind: io.l5d.zk
-  zkAddrs:
-  - host: zook
-    port: 2181
+  experimental: true
   pathPrefix: /dtabs
-  sessionTimeoutMs: 10000
-
+  zkAddrs:
+  - host: zoo1
+    port: 2181
+  
 namers:
 - kind: io.l5d.fs
   rootDir: /io.buoyant/disco
 
 interfaces:
-- kind: io.l5d.thriftNameInterpreter
-  ip: 0.0.0.0
-  port: 4100
 - kind: io.l5d.httpController
   ip: 0.0.0.0
   port: 4180
