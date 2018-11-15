@@ -8,7 +8,7 @@ storage:
   zkAddrs:
   - host: zoo1
     port: 2181
-  
+
 namers:
 - kind: io.l5d.fs
   rootDir: /io.buoyant/disco
