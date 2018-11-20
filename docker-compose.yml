@@ -25,6 +25,11 @@ services:
     - ./disco:/io.buoyant/disco
     command: >
       /io.buoyant/linkerd.yml
+    environment:
+    - JVM_HEAP_MAX=1024M
+    - JVM_HEAP_MIN=1024M
+    - FINAGLE_WORKERS=24
+    - LOCAL_JVM_OPTIONS=-XX:NativeMemoryTracking=summary
 
   #namerd
   n5d:

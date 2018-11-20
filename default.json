@@ -1,6 +1,1 @@
-[
-  {
-    "prefix": "/svc",
-    "dst": "/$/inet/127.1/80"
-  }
-]
+[{"prefix":"/svc/green","dst":"/$/inet/green/80"}]
